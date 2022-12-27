@@ -1,4 +1,7 @@
 def sentence_word_count(sentence: str, n: int):
+    if n < 0:
+        raise ValueError("n parameter should be > 0")
+
     words = sentence.split()
     word_count = []
 

@@ -38,6 +38,13 @@ def test_sentence_word_count_big_count():
 
     assert sentence_word_count(input, 15000) == expected
 
+def test_sentence_word_count_negative():
+    input = "baz bar foo foo zblah zblah zblah baz toto bar"
+
+    with pytest.raises(ValueError) as e:
+        sentence_word_count(input, -1)
+        assert e == "n parameter should be > 0"
+
 @pytest.mark.parametrize(
     "input, count, expected",
     [
